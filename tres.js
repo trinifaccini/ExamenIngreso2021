@@ -11,13 +11,15 @@ function mostrar()
 	
 	let viudos = 0;
 
-	let flagMS = 0;
+	let flag = 0;
 	let mujerSoltera;
 	let minEdadMS = 0;
 	
 	let pasajeros = 0;
 	let precioViaje = 0;
 	let precioViajeDcto = 0;
+
+	let contMayores = 0;
 	
 
 	do{
@@ -27,9 +29,9 @@ function mostrar()
 			nombre = prompt("Por favor, ingrese su nombre");
 		}
 
-		estadoCivil = prompt("Ingrese su estado civil (soletero, casado o viudo)");
+		estadoCivil = prompt("Ingrese su estado civil (soltero, casado o viudo)");
 		while(estadoCivil != "soltero" && estadoCivil != "casado" && estadoCivil != "viudo"){
-			estadoCivil = prompt("Por favor, ingrese su estado civil (soletero, casado o viudo");
+			estadoCivil = prompt("Por favor, ingrese su estado civil (soltero, casado o viudo");
 		}
 
 		edad = parseInt(prompt("Ingrese su edad (mayor a 17)"));
@@ -56,9 +58,9 @@ function mostrar()
 			contMayores++;
 		}
 
-		if(sexo == "f"){
+		if(sexo == "f" && estadoCivil == "soltero"){
 
-			if(flagMS == 0 || edad < minEdadMS){ 
+			if(flag == 0 || edad < minEdadMS){ 
 				minEdadMS = edad;
 				mujerSoltera = nombre;
 				flag = 1;
@@ -75,16 +77,9 @@ function mostrar()
 		alert("La cantidad de personas mayores de 60 viudos/as es de: " + viudos);
 	}
 
-	if(flagMS != 0){
+	//b)
+	if(flag == 1){
 		alert("La mujer soltera mas joven es: " + mujerSoltera + " y su edad es: " + minEdadMS);
-	}
-
-	if(contMayores != 0){
-		alert("La cantidad de personas mayores a 60 años con mas de 38 de temperatura es de: " + contMayores);
-	}
-
-	if(acumHombresS != 0){
-		alert("El promedio de edad de hombres solteros es de: " + (acumEdadHombresS/acumHombresS));
 	}
 
 	//c)
