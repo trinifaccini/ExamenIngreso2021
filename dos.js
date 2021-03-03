@@ -71,8 +71,8 @@ function mostrar()
 		
     if(sexo != "m"){
 
-      if(flagProm == 0 || promedio > maxPromedio){ 
-        maxPromedio = promedio;
+      if(flagProm == 0 || promedioNota > maxPromedio){ 
+        maxPromedio = promedioNota;
         personaMaxProm = nombre;
         flagProm = 1;
       }
